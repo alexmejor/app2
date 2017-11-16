@@ -8,7 +8,9 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <feature name="http://api.phonegap.com/1.0/network" />
+
+    <access origin="*" onlyInBrowser="true" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
