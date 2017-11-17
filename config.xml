@@ -17,7 +17,7 @@
     <allow-intent href="geo:*" />
     <allow-navigation href="http://cordova.apache.org/" />
     <allow-navigation href="*" />
-
+    <icon src="icon.png" />
     <platform name="android">
         <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />
