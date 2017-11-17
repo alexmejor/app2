@@ -25,7 +25,6 @@
         <allow-intent href="https://*/*" />
         <allow-intent href="*" />
         <allow-navigation href="*" />
-        <allow-access
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
