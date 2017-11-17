@@ -10,6 +10,8 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
@@ -103,6 +105,8 @@
     <access origin="*" />
     <allow-intent href="*" />
     <allow-navigation href="*" />
+    <allow-navigation href="http://*/*" />
+    <allow-intent href="https://*/*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
