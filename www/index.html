@@ -11,30 +11,171 @@
     <title>My App</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <!-- JavaScript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// Show or hide the sticky footer button
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 200) {
+					$('.go-top').fadeIn(200);
+				} else {
+					$('.go-top').fadeOut(200);
+				}
+			});
 
+			// Animate the scroll to top
+			$('.go-top').click(function(event) {
+				event.preventDefault();
+
+				$('html, body').animate({scrollTop: 0}, 300);
+			})
+		});
+	</script>
 </head>
 
 <body>
 <input type="checkbox" class="checkbox" id="menu-toogle"/>
 <label for="menu-toogle" class="menu-toogle"></label>
 <nav class="nav">
-  <a href="#c2" class="nav__item current">Item del Menú 1</a>
-  <a href="#" class="nav__item">Item del Menú 2</a>
-  <a href="#" class="nav__item">Item del Menú 3</a>
-  <a href="#" class="nav__item">Item del Menú 4</a>
-  <a href="#" class="nav__item">Item del Menú 5</a>
+  <a href="#codigo1" class="nav__item">Código transición</a>
+  <a href="#codigo2" class="nav__item">Código Animación</a>
+  <a href="#" class="nav__item">Código transformación 1</a>
+  <a href="#" class="nav__item">Código transformación 2</a>
 </nav> 
 <div class="cabecera"><h2>Ejercicios CSS</h2></div>
 <div class="contenedor">
-      
-    <a class="boton" href="#"><h2>Comenzar1</h2></a><br>
-    <a class="boton" href="#c2"><h2>Comenzar2</h2></a>
-      
-</div>
-    <div style="height: 100vh;">
-    <p id="c1"></p>1</div>
-    <div style="height: 100vh;"><p id="c2"></p>2</div>
+    	<span class="go-top" href="#"></span>
+  
+    <input type="button" class="boton" value="Transición" onclick="window.location='#transicion';"><br>
+    <input type="button" class="boton" value="Animación" onclick="window.location='#freezer';"><br>
+    <input type="button" class="boton" value="Peso de reglas" onclick="window.location='#reglas';"><br>
+    <input type="button" class="boton" value="Selectores" onclick="window.location='#selectores';"><br>
 
+</div>   
+    <div style="height: 100vh;" class="codigo" id="transicion">
+        <div id="c1"><h3>Gírame!</h3></div>
+        <div id="c2"><h3>Gírame!</h3></div>
+        <div id="c3"><h3>Gírame!</h3></div>
+    </div>
+    <div style="height: 100vh;" id="freezer" class="freezer"><div class="bola1"></div><div class="bola2"></div></div>
+    <div style="height: 100vh; padding: 2em; line-height: 30px;" class="codigo" id="reglas">
+        <h2>Peso de las reglas</h2><br>
+        <p>Una regla con mayor peso prevalecerá sobre otra de menor peso.<br>
+        Selector ID: 100<br>
+        Selector de CLASE: 010<br>
+        Selector de HTML: 001</p>
+    </div>
+    <div style="padding: 1em;" class="codigo" id="selectores">
+       <br><br><br>
+        <h2>Selectores</h2>
+        <p>
+            <b>div > p:</b> Selecciona todos los p donde el padre es un div.<br><br>
+            <b>div + p:</b> Selecciona todos los p que van justo despues de los div.<br><br>
+            <b>p ~ ul: </b>Selecciona todos los ul que van despues de un p.<br><br>
+            <b>[type="text"]:</b> Selecciona todos los elementos que son de tipo texto.<br><br>
+            <b>[title~=flower]:</b> Selecciona los elementos con el atributo titulo que contiene la palabra "flower".<br><br>
+            <b>[lang|=en]:</b> Selecciona los elementos con el atributo lang que empiezan por "en".<br><br>
+            <b>a[href^="https"]:</b> Selecciona los elementos "a" que su atributo href empieza por "https".<br><br>
+            <b>a[href$=".pdf"]:</b> Selecciona los elementos "a" que su atributo href acaba en ".pdf".<br><br>
+            <b>p:nth-child(2):</b> Selecciona los "p" que son los segundos hijos de su padre.<br><br>
+        </p></div>
+        <div style="height: 100vh;" class="codigo1" id="codigo1">
+            #c2, #c1, #c3 {<br>
+                        width: 100px;<br>
+                        height: 100px;<br>
+                        border: 2px solid black;<br>
+                        background-color: darkred;<br>
+                        color: white;<br>
+                        margin: 2rem;<br>
+                    }<br><br>
+                    #c1:hover {<br>
+                        transform: rotate(360deg);<br>
+                        transition-duration: 5s;<br>
+                    }<br><br>
+                    #c2:hover {<br>
+                        transform: rotate(360deg);<br>
+                        transition-duration: 1s;<br>
+                    }<br><br>
+                    #c3:hover {<br>
+                        transform: rotate(-360deg);<br>
+                        transition-duration: 1s;<br>
+                    }<br>
+        </div>
+        <div  class="codigo1" id="codigo2">
+                   <br><br><br><br>
+                    .freezer {<br>
+                background-image: url(../freezer.png);<br>
+                background-position: bottom;<br>
+                background-repeat: no-repeat;<br>
+                width: 100%;<br>
+                height: 100vh;<br>
+                animation-name: freezer;<br>
+                animation-duration: 10s;<br>
+                background-color: black;<br>
+                animation-iteration-count: infinite;<br>
+            }<br><br>
+
+            .bola1 {<br>
+                animation-name: bola1;<br>
+                top: 90px;<br>
+                left: 127px;<br>
+            }<br><br>
+
+            .bola2 {<br>
+                animation-name: bola2;<br>
+                top: 90px;<br>
+                left: -120px;<br>
+            }<br><br>
+
+            .bola1, .bola2 {<br>
+                animation-duration: 5s;<br>
+                animation-iteration-count: infinite;<br>
+                border-radius: 50%;<br>
+                width: 40px;<br>
+                height: 40px;<br>
+                background-color: rgb(219, 113, 221);<br>
+                position: relative;<br>
+                opacity: .8;<br>
+                border: 15px solid rgb(161, 24, 174);<br>
+            }<br><br>
+
+            @keyframes bola1 {<br>
+                0% {<br>
+                }<br>
+                50% {<br>
+                    width: 60px;<br>
+                    height: 60px;<br>
+                    border: 10px solid rgb(161, 24, 174);<br>
+                }<br>
+                100% {<br>
+                }<br>
+            }<br><br>
+
+            @keyframes bola2 {<br>
+                0% {<br>
+                }<br>
+                50% {<br>
+                    width: 60px;<br>
+                    height: 60px;<br>
+                    border: 10px solid rgb(161, 24, 174);<br>
+                }<br>
+                100% {<br>
+                }<br>
+            }<br><br>
+
+            @keyframes freezer {<br>
+                0% {<br>
+                    background-color: #550000;<br>
+                }<br>
+                33% {<br>
+                    background-color: black;<br>
+                }<br>
+                76% {<br>
+                    background-color: #390d1b;<br>
+                }<br>
+                100% {<br>background-color: #550000;<br>}<br>}<br>
+        </div>
 </body>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
